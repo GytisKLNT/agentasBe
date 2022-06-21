@@ -4,6 +4,7 @@ const cors = require('cors');
 const { serverPort } = require('./config');
 
 const UserRoutes = require('./routes/v1/users');
+const TeamsRoutes = require('./routes/v1/teams');
 
 const app = express();
 app.use(express.json());
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/v1/users/', UserRoutes);
+app.use('/v1/teams/', TeamsRoutes);
 
 app.all('*', (req, res) => {
   res.status(404).send({ err: 'Page not found' });
