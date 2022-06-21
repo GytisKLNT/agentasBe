@@ -5,6 +5,7 @@ const { serverPort } = require('./config');
 
 const UserRoutes = require('./routes/v1/users');
 const TeamsRoutes = require('./routes/v1/teams');
+const PlayersRoutes = require('./routes/v1/players');
 
 const app = express();
 app.use(express.json());
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 
 app.use('/v1/users/', UserRoutes);
 app.use('/v1/teams/', TeamsRoutes);
+app.use('/v1/players/', PlayersRoutes);
 
 app.all('*', (req, res) => {
   res.status(404).send({ err: 'Page not found' });
