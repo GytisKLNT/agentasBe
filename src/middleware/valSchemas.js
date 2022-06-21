@@ -19,8 +19,16 @@ const addTeamSchema = Joi.object({
   teamName: Joi.string().required(),
 });
 
+const addPlayerSchema = Joi.object({
+  city: Joi.string().required(),
+  position: Joi.string().required(),
+  description: Joi.string().required(),
+  phone: Joi.string().required(),
+});
+
 module.exports = {
   registrationSchema,
   loginSchema,
   addTeamSchema,
+  addPlayerSchema,
 };
