@@ -24,6 +24,8 @@ const addPlayerSchema = Joi.object({
   position: Joi.string().required(),
   description: Joi.string().required(),
   phone: Joi.string().required(),
+  name: Joi.string().required(),
+  lastName: Joi.string().required(),
 });
 
 module.exports = {

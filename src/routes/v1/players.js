@@ -26,12 +26,14 @@ router.post('/', isLoggedIn, validation(addPlayerSchema), async (req, res) => {
   try {
     const con = await mysql.createConnection(mysqlConfig);
     const [data] = await con.execute(`
-              INSERT INTO player (city, position, description, phone, user_id)
+              INSERT INTO player (city, position, description, phone, user_id, name, last_name)
               VALUES (${mysql.escape(req.body.city)},
               ${mysql.escape(req.body.position)},
               ${mysql.escape(req.body.description)},
               ${mysql.escape(req.body.phone)},
-              ${mysql.escape(req.user.accountId)})
+              ${mysql.escape(req.user.accountId)},
+              ${mysql.escape(req.body.name)},
+              ${mysql.escape(req.body.lastName)})
               `);
     await con.end();
 

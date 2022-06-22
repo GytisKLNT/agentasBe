@@ -40,7 +40,7 @@ router.post('/login', validation(loginSchema), async (req, res) => {
         `);
     await con.end();
 
-    if (!data.length === 0) {
+    if (data.length === 0) {
       return res.status(400).send({ msg: 'Incorrect email or password' });
     }
 
