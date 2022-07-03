@@ -22,6 +22,21 @@ router.get('/', isLoggedIn, async (req, res) => {
   }
 });
 
+router.get('/userplayer', isLoggedIn, async (req, res) => {
+  try {
+    const con = await mysql.createConnection(mysqlConfig);
+    const [data] = await con.execute(`
+          SELECT * FROM player
+          WHERE user_id = ${mysql.escape(req.user.accountId)}
+          `);
+    await con.end();
+
+    return res.send(data);
+  } catch (err) {
+    return res.status(500).send({ msg: 'An issue was found. Please try again later.' });
+  }
+});
+
 router.post('/', isLoggedIn, validation(addPlayerSchema), async (req, res) => {
   try {
     const con = await mysql.createConnection(mysqlConfig);
