@@ -37,6 +37,21 @@ router.get('/userplayer', isLoggedIn, async (req, res) => {
   }
 });
 
+router.get('/delete/:id', isLoggedIn, async (req, res) => {
+  try {
+    const con = await mysql.createConnection(mysqlConfig);
+    const [data] = await con.execute(`
+          DELETE FROM player
+          WHERE id = ${mysql.escape(req.params.id)}
+          `);
+    await con.end();
+
+    return res.send(data);
+  } catch (err) {
+    return res.status(500).send({ msg: 'An issue was found. Please try again later.' });
+  }
+});
+
 router.post('/', isLoggedIn, validation(addPlayerSchema), async (req, res) => {
   try {
     const con = await mysql.createConnection(mysqlConfig);
