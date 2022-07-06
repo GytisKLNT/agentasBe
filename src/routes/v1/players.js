@@ -37,7 +37,7 @@ router.get('/userplayer', isLoggedIn, async (req, res) => {
   }
 });
 
-router.get('/delete/:id', isLoggedIn, async (req, res) => {
+router.delete('/delete/:id', isLoggedIn, async (req, res) => {
   try {
     const con = await mysql.createConnection(mysqlConfig);
     const [data] = await con.execute(`
@@ -46,7 +46,7 @@ router.get('/delete/:id', isLoggedIn, async (req, res) => {
           `);
     await con.end();
 
-    return res.send(data);
+    return res.send({ msg: 'Succesfully deleted post', data });
   } catch (err) {
     return res.status(500).send({ msg: 'An issue was found. Please try again later.' });
   }
