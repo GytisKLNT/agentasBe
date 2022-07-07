@@ -1,9 +1,9 @@
-# Basketball Agent App Back-End
+# ⛹️ Gym App Back-End
 
-  <!-- <p align="center">
-    <a href="https://github.com/GytisKLNT/BEtestas.git"><strong>Explore the docs »</strong></a> -->
+  <p align="center">
+    <a href="https://github.com/GytisKLNT/agentasBe"><strong>Explore the docs »</strong></a>
 
-<!-- </div> -->
+</div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -32,10 +32,10 @@
 
 ## About The Project
 
-<!-- This is Somelje App Back-End server where user can register, change password, see all wines, ad wines to his list
+This is basketball agent App Back-End server where user can register, change password, see all wines, ad wines to his list
 
 - 🗝️ Auth
-- 💾 Data storage -->
+- 💾 Data storage
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -98,7 +98,7 @@ Don't forget to give the project a star! Thanks again!
 - Gytis - gytis.kalanta@gmail.com
 - [LinkedIn](www.linkedin.com/in/gytis-kalanta)
 
-<!-- Project Link: [https://github.com/GytisKLNT/Gym_App_BE](https://github.com/GytisKLNT/Gym_App_BE) -->
+Project Link: [https://github.com/GytisKLNT/agentasBe](https://github.com/GytisKLNT/agentasBe)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
